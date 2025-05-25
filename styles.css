@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(226, 43%, 10%);
+    color: hsl(100, 100%, 100%);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.125rem;
+    height: 100vh;
+}
