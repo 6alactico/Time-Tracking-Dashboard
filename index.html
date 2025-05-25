@@ -10,89 +10,104 @@
 </head>
 <body>
   <main id="dashboard-cards">
-    <article>
-      <section>
-        <img src="/images/image-jeremy.png" alt="Image of Jeremy">
-        <h1> Report for <br><span>Jeremy Robson</span></br> </h1>
-      </section>
-      <nav>
-        <button>Daily</button>
-        <button>Weekly</button>
-        <button>Monthly</button>
-      </nav>
+    <article id="report-card">
+      <header>
+        <img id="avatar" src="/images/image-jeremy.png" alt="Image of Jeremy">
+        <h1>Report for<br><span>Jeremy Robson</span></br></h1>
+      </header>
+      <div id="segmented-buttons">
+        <button type="button" aria-selected="true" role="tab">Daily</button>
+        <button type="button" aria-selected="false" role="tab">Weekly</button>
+        <button type="button" aria-selected="false" role="tab">Monthly</button>
+      </div>
     </article>
 
-    <article>
-      <img src="/images/icon-work.svg">
-        <section>
-          <h2>Work</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>32hrs</p> 
-          <p>Previous - 36hrs</p> 
-        </div> 
-    </article>
-
-    <article>
-      <img src="/images/icon-play.svg">
-        <section>
-          <h2>Play</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>10hrs</p> 
-          <p>Previous - 8hrs</p> 
-        </div>
-    </article>
-
-    <article>
-      <img src="/images/icon-study.svg">
-        <section>
-          <h2>Study</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>4hrs</p> 
-          <p>Previous - 7hrs</p> 
-        </div> 
-    </article>
-
-    <article>
-      <img src="/images/icon-exercise.svg">
-        <section>
-          <h2>Exercise</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>4hrs</p> 
-          <p>Previous - 5hrs</p> 
-        </div>
-    </article>
-
-    <article>
-      <img src="/images/icon-social.svg">
-        <section>
-          <h2>Social</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>5hrs</p> 
-          <p>Previous - 10hrs</p> 
-        </div> 
-    </article>
-
-    <article>
-      <img src="/images/icon-self-care.svg">
-        <section>
-          <h2>Self Care</h2>
-          <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-        </section>
-        <div class="card-data"> 
-          <p>2hrs</p> 
-          <p>Previous - 2hrs</p> 
-        </div> 
-    </article>
+      <div id="time-cards">
+        <!-- WORK CARD -->
+        <article id="work-card">
+          <img class="card-icon" src="/images/icon-work.svg" style="width: 5rem; height: 5rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Work</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>32hrs</h2>
+                <p>Last Week - 36hrs</p>
+              </div>
+            </section>
+        </article>
+        <!-- PLAY CARD -->
+        <article id="play-card">
+          <img class="card-icon" src="/images/icon-play.svg" style="width: 5rem; height: 5rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Play</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>10hrs</h2>
+                <p>Last Week - 8hrs</p>
+              </div>
+            </section>
+        </article>
+        <!-- STUDY CARD -->
+        <article id="study-card">
+          <img class="card-icon" src="/images/icon-study.svg" style="width: 5rem; height: 5rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Study</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>4hrs</h2>
+                <p>Last Week - 7hrs</p>
+              </div>
+            </section>
+        </article>
+        <!-- EXERCISE CARD -->
+        <article id="exercise-card">
+          <img class="card-icon" src="/images/icon-exercise.svg" style="width: 5rem; height: 4rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Exercise</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>4hrs</h2>
+                <p>Last Week - 5hrs</p>
+              </div>
+            </section>
+        </article>
+        <!-- SOCIAL CARD -->
+        <article id="social-card">
+          <img class="card-icon" src="/images/icon-social.svg" style="width: 4rem; height: 5rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Social</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>5hrs</h2>
+                <p>Last Week - 10hrs</p>
+              </div>
+            </section>
+        </article>
+        <!-- SELF CARD -->
+        <article id="self-card">
+          <img class="card-icon" src="/images/icon-self-care.svg" style="width: 5rem; height: 5rem;">
+            <section class="card-data">
+              <div class="card-header">
+                <p>Self Care</p>
+                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
+              </div>
+              <div class="card-time">
+                <h2>2hrs</h2>
+                <p>Last Week - 2hrs</p>
+              </div>
+            </section>
+        </article>
+      </div>
   </main>
 </body>
 </html>
