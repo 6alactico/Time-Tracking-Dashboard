@@ -10,104 +10,104 @@
 </head>
 <body>
   <main id="dashboard-cards">
-    <article id="report-card">
+    <div class="card" id="report-card">
       <header>
         <img id="avatar" src="/images/image-jeremy.png" alt="Image of Jeremy">
-        <h1>Report for<br><span>Jeremy Robson</span></br></h1>
+        <h1>Report for<span style="display: block;">Jeremy Robson</span></h1>
       </header>
       <div id="segmented-buttons">
-        <button type="button" aria-selected="true" role="tab">Daily</button>
-        <button type="button" aria-selected="false" role="tab">Weekly</button>
-        <button type="button" aria-selected="false" role="tab">Monthly</button>
+        <button data-view="daily" class="button" type="button">Daily</button>
+        <button data-view="weekly" class="button active" type="button">Weekly</button>
+        <button data-view="monthly" class="button" type="button">Monthly</button>
       </div>
-    </article>
+    </div>
 
-      <div id="time-cards">
-        <!-- WORK CARD -->
-        <article id="work-card">
-          <img class="card-icon" src="/images/icon-work.svg" style="width: 5rem; height: 5rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Work</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>32hrs</h2>
-                <p>Last Week - 36hrs</p>
-              </div>
-            </section>
-        </article>
-        <!-- PLAY CARD -->
-        <article id="play-card">
-          <img class="card-icon" src="/images/icon-play.svg" style="width: 5rem; height: 5rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Play</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>10hrs</h2>
-                <p>Last Week - 8hrs</p>
-              </div>
-            </section>
-        </article>
-        <!-- STUDY CARD -->
-        <article id="study-card">
-          <img class="card-icon" src="/images/icon-study.svg" style="width: 5rem; height: 5rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Study</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>4hrs</h2>
-                <p>Last Week - 7hrs</p>
-              </div>
-            </section>
-        </article>
-        <!-- EXERCISE CARD -->
-        <article id="exercise-card">
-          <img class="card-icon" src="/images/icon-exercise.svg" style="width: 5rem; height: 4rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Exercise</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>4hrs</h2>
-                <p>Last Week - 5hrs</p>
-              </div>
-            </section>
-        </article>
-        <!-- SOCIAL CARD -->
-        <article id="social-card">
-          <img class="card-icon" src="/images/icon-social.svg" style="width: 4rem; height: 5rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Social</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>5hrs</h2>
-                <p>Last Week - 10hrs</p>
-              </div>
-            </section>
-        </article>
-        <!-- SELF CARD -->
-        <article id="self-card">
-          <img class="card-icon" src="/images/icon-self-care.svg" style="width: 5rem; height: 5rem;">
-            <section class="card-data">
-              <div class="card-header">
-                <p>Self Care</p>
-                <svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="#BBC0FF" fill-rule="evenodd"/></svg>
-              </div>
-              <div class="card-time">
-                <h2>2hrs</h2>
-                <p>Last Week - 2hrs</p>
-              </div>
-            </section>
-        </article>
+    <div id="time-cards">
+      <!-- WORK CARD -->
+      <div class="card" id="work-card">
+        <img class="card-icon" src="/images/icon-work.svg" alt="Briefcase icon" style="width: 5rem; height: 5rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p> <!-- Display card title via JS -->
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2> <!-- Display current hours via JS -->
+              <p class="previous"></p> <!-- Display previous hours via JS -->
+            </div>
+          </section>
       </div>
+        <!-- PLAY CARD -->
+      <div class="card" id="play-card">
+        <img class="card-icon" src="/images/icon-play.svg" alt="Gaming controller icon" style="width: 5rem; height: 5rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p>
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2>
+              <p class="previous"></p>
+            </div>
+          </section>
+      </div>
+      <!-- STUDY CARD -->
+      <div class="card" id="study-card">
+        <img class="card-icon" src="/images/icon-study.svg" alt="Book icon" style="width: 5rem; height: 5rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p>
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2>
+              <p class="previous"></p>
+            </div>
+          </section>
+      </div>
+      <!-- EXERCISE CARD -->
+      <div class="card" id="exercise-card">
+        <img class="card-icon" src="/images/icon-exercise.svg" alt="Person icon" style="width: 5rem; height: 4rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p>
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2>
+              <p class="previous"></p>
+            </div>
+          </section>
+      </div>
+      <!-- SOCIAL CARD -->
+      <div class="card" id="social-card">
+        <img class="card-icon" src="/images/icon-social.svg" alt="Text bubbles icon" style="width: 4rem; height: 5rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p>
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2>
+              <p class="previous"></p>
+            </div>
+          </section>
+      </div>
+      <!-- SELF CARD -->
+      <div class="card" id="self-care-card">
+        <img class="card-icon" src="/images/icon-self-care.svg" alt="Heart aid icon" style="width: 5rem; height: 5rem;">
+          <section class="card-data">
+            <div class="card-header">
+              <p class="card-title"></p>
+              <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
+            </div>
+            <div class="card-hours">
+              <h2 class="current"></h2>
+              <p class="previous"></p>
+            </div>
+          </section>
+      </div>
+    </div>
   </main>
 </body>
 </html>

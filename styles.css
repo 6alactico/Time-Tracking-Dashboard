@@ -27,11 +27,9 @@ body {
     width: 23.438rem;
 }
 
-#time-cards {
-    gap: 4.5rem;
-}
+#time-cards { gap: 4rem; }
 
-article {
+.card {
     border-radius: 0.875rem;
     margin: 0 auto;
     position: relative;
@@ -39,13 +37,13 @@ article {
 }
 
 /* Card background colors */
-#report-card { background-color: var(--navy900); margin-bottom: 1.875rem;}
+#report-card { background-color: var(--navy900); margin-bottom: 1.5rem;}
 #work-card { background-color: hsl(15, 100%, 70%); }
 #play-card { background-color: hsl(195, 74%, 62%); }
 #study-card { background-color: hsl(348, 100%, 68%); }
 #exercise-card { background-color: hsl(145, 58%, 55%); }
 #social-card { background-color: hsl(264, 64%, 52%); }
-#self-card { background-color: hsl(43, 84%, 65%); }
+#self-care-card { background-color: hsl(43, 84%, 65%); }
 
 /* REPORT CARD CONTENTS */
 header {
@@ -70,9 +68,7 @@ h1 {
     line-height: 1.6rem;
 }
 
-h1 span {
-    font-size: 1.5rem;
-}
+h1 span { font-size: 1.5rem; }
 
 /* Segmented buttons */
 #segmented-buttons {
@@ -82,13 +78,17 @@ h1 span {
 }
 
 button {
-    color: var(--white);
+    color: hsl(236, 100%, 87%);
     background-color: transparent;
     border: none;
     font-family: 'Rubik', sans-serif;
     font-size: 1.125rem;
     font-weight: 300;
     padding: 1rem;
+}
+
+.button:active, .active {
+    color: var(--white);
 }
 
 /* OTHER CARDS */
@@ -101,9 +101,9 @@ button {
 .card-data {
     background-color: var(--navy900);
     border-radius: 0.875rem;
-    padding: 1.5rem 2rem;
+    padding: 2rem 2rem;
     position: relative;
-    top: 2.875rem;
+    top: 2.5rem;
     gap: 0.6rem;
 }
 
@@ -114,19 +114,42 @@ button {
     justify-content: space-between;
     font-weight: 500;
 }
-
-.card-time {
+.menu-icon {
+    fill: hsl(236, 100%, 87%);
+}
+.card-hours {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.card-time p {
+.card-hours p {
     color: hsl(236, 100%, 87%);
     font-weight: 300;
     font-size: 0.875rem;
 }
 
 h2 {
+    font-size: 1.875rem;
     font-weight: 300;
+}
+
+@media screen and (min-width: 48rem) {
+
+    .button:hover, .card-data:hover, .menu-icon:hover {
+        cursor: pointer;
+    }
+    .button:hover {
+        color: var(--white);
+    }
+    
+    .card-data:hover {
+        background-color:  hsl(235, 45%, 61%);
+        cursor: pointer;
+    }
+
+    .menu-icon:hover {
+        cursor: pointer;
+        fill: var(--white);
+    }
 }
