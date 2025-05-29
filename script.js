@@ -1,45 +1,15 @@
-const buttons = document.querySelectorAll('#segmented-buttons button');
-let timeData = []; // Hold JSON data
-
+const buttons = document.querySelectorAll('#view-toggle button');
+let timeData = [];
 // Fetch data from json file
 fetch('data.json')
     .then(res => res.json()) // Converts data.json to object
         .then(data => {
             timeData = data; // Saves JSON into timeData for use
 
-            const activeBtn = document.querySelector('segmented-buttons .active') || buttons[1]; // If no button is active, it defaults to the second one
+            const activeBtn = document.querySelector('#view-toggle .active') || buttons[1]; // If no button is active, it defaults to the second one
             updateUI(activeBtn.dataset.view); 
 })
 .catch(err => console.error('Failed to load data:', err));
-
-// Match JSON titles to card IDs
-function titleToId(title) {
-    return title.toLowerCase().replace(' ', '-') + '-card';
-}
-
-// Update cards on selected view
-function updateUI(view) {
-    // Loop through each activity
-    timeData.forEach(item => {
-        const cardId = titleToId(item.title);
-        const card = document.getElementById(cardId);
-        if (!card) return; // If card is not found, skip
-
-        const currentTime = card.querySelector('.current');
-        const previousTime = card.querySelector('.previous');
-        const cardTitle = card.querySelector('.card-title');
-        cardTitle.textContent = item.title;
-        console.log(cardTitle);
-
-        // Get values for the chosen view
-        const { current, previous } = item.timeframes[view];
-        currentTime.textContent = `${current}hrs`; // Displays current hours
-
-        if (previousTime) {
-            previousTime.textContent = `${'Last Week'} - ${previous}hrs`; // Displays previous hours
-        }
-    });
-}
 
 // Toggle between views using buttons
 buttons.forEach(btn => {
@@ -51,3 +21,43 @@ buttons.forEach(btn => {
         updateUI(view);
     });
 });
+
+// Match JSON titles to card IDs
+function titleToCard(title) {
+    return title.toLowerCase().replace(/\s+/g, '-');
+}
+
+// Get label based on timeframe
+function previousLabel(view) {
+    switch (view) {
+        case 'daily':
+            return 'Yesterday';
+        case 'weekly':
+            return 'Last Week';
+        case 'monthly':
+            return 'Last Month';
+        default:
+            return 'Previous';
+    }  
+}
+
+// Update cards on selected view
+function updateUI(view) {
+    timeData.forEach(item => {
+        const cardClass = titleToCard(item.title);
+        console.log('Looking for card with class:', cardClass);
+        const card = document.querySelector(`.card.${cardClass}`);
+        if (!card) return;
+
+        const currentTime = card.querySelector('.current-hours');
+        const previousTime = card.querySelector('.previous-hours');
+        const cardTitle = card.querySelector('.card-title');
+        cardTitle.textContent = item.title;
+
+        // Get values for chosen view
+        const { current, previous } = item.timeframes[view];
+        const label = previousLabel(view);
+        currentTime.textContent = `${current}hrs`; 
+        previousTime.textContent = `${label} - ${previous}hrs`;
+    });
+}
