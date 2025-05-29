@@ -19,11 +19,12 @@ body {
     margin: 4rem auto;
 }
 
-#dashboard, .card, .card-body, .card-title-row, .card-hours, #profile-header, #view-toggle {
+#dashboard, .card, .card-body, .card-title-row, 
+.card-hours, #profile-header, #view-toggle {
     display: flex;
 }
 
-/* DASHBOARD AND CARD LAYOUT */
+/*-- Dashboard and card layout --*/
 #dashboard {
     flex-direction: column;
     gap: 1.5rem;
@@ -40,7 +41,15 @@ body {
     position: relative;
 }
 
-/* CARD CONTENTS */
+/*-- Card elements --*/
+.profile { background-color: var(--navy900); flex-direction: column;}
+.work { background-color: hsl(15, 100%, 70%); }
+.play { background-color: hsl(195, 74%, 62%); }
+.study { background-color: hsl(348, 100%, 68%); }
+.exercise { background-color: hsl(145, 58%, 55%); }
+.social { background-color: hsl(264, 64%, 52%); }
+.self-care { background-color: hsl(43, 84%, 65%); }
+
 .card-icon {
     position: absolute;
     right: 1.5rem;
@@ -75,21 +84,9 @@ h2 { font-size: 1.2rem; font-weight: 400; }
     width: 100%;
 }
 
-.previous-hours {
-    color: var(--navy200);
-    font-size: 0.875rem;
-}
+.previous-hours { color: var(--navy200); font-size: 0.875rem; }
 
-/* Card background colors */
-.profile { background-color: var(--navy900); flex-direction: column;}
-.work { background-color: hsl(15, 100%, 70%); }
-.play { background-color: hsl(195, 74%, 62%); }
-.study { background-color: hsl(348, 100%, 68%); }
-.exercise { background-color: hsl(145, 58%, 55%); }
-.social { background-color: hsl(264, 64%, 52%); }
-.self-care { background-color: hsl(43, 84%, 65%); }
-
-/* PROFILE CARD CONTENTS */
+/*-- Profile card elements --*/
 #profile-header {
     align-items: center;
     background-color: hsl(246, 80%, 60%);
@@ -113,7 +110,7 @@ h1 {
 
 h1 span { font-size: 1.5rem; color: var(--white);}
 
-/* Toggle view buttons */
+/*-- Button elements --*/
 #view-toggle { gap: 2.5rem; margin: auto; }
 
 button {
@@ -129,8 +126,9 @@ button {
 
 .toggle-button:active, .active { color: var(--white); }
 
-/* DESKTOP DEVICE */
+/*-- Desktop Screen Size --*/
 @media screen and (min-width: 48rem) {
+    body { margin: 0rem auto; }
     body, .card-hours { display: flex; }
     
     #dashboard {
@@ -144,7 +142,8 @@ button {
         justify-content: center;
         width: auto;
     }
-    
+
+    /*-- Card elements --*/
     .work { grid-area: work; }
     .play { grid-area: play; }
     .profile { grid-area: profile; }
@@ -155,20 +154,10 @@ button {
 
     .card { width: 15rem; min-height: 14rem; }
     .card-body { justify-content: space-between; height: 83%; }
-    .card-body:hover { background-color:  hsl(235, 45%, 61%); cursor: pointer; }
+    .card-body:hover { background-color:  hsl(235, 45%, 61%); }
 
-    /* Card contents */
-    #profile-header {
-        flex-direction: column;
-        gap: 2.5rem;
-        padding: 2rem 1.75rem;
-        height: 100%;
-    }
-
-    h1 span {
-        font-size: 2.2rem;
-        line-height: 2.8rem;
-    }
+    .card-body:hover, .menu-icon:hover, .toggle-button:hover { cursor: pointer; }
+    .menu-icon:hover { cursor: pointer; fill: var(--white); }
 
     .card-hours {
         align-items: flex-start;
@@ -176,12 +165,19 @@ button {
         gap: 0.5rem;
     }
 
-    .current-hours {
-        font-size: 3rem;
-        font-weight: 300;
+    .current-hours { font-size: 3rem; font-weight: 300; }
+
+    /*-- Profile card elements --*/
+    #profile-header {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2rem 1.75rem;
+        height: 100%;
     }
 
-    /* Buttons */
+    h1 span { font-size: 2.2rem; line-height: 2.8rem; }
+
+    /*-- Button elements --*/
     #view-toggle { 
         flex-direction: column; 
         gap: 1.3rem;
@@ -193,9 +189,6 @@ button {
         height: auto;
         text-align: left; 
     }
-    
-    .toggle-button:hover, .card-body:hover, 
-    .menu-icon:hover { cursor: pointer; }
+
     .toggle-button:hover { color: var(--white); }
-    .menu-icon:hover { cursor: pointer; fill: var(--white); }
 }
