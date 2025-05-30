@@ -28,9 +28,10 @@ function updateUI(view) {
         if (!card) return;
 
         const {current, previous} = timeframes[view];
+        const hourStr = (n) => n === 1 ? 'hr' : 'hrs';
         
         card.querySelector('.card-title').textContent = title;
-        card.querySelector('.current-hours').textContent = `${current}hrs`;
-        card.querySelector('.previous-hours').textContent = `${previousLabel(view)} - ${previous}hrs`;
+        card.querySelector('.current-hours').textContent = `${current}${hourStr(current)}`;
+        card.querySelector('.previous-hours').textContent = `${previousLabel(view)} - ${previous}${hourStr(previous)}`;
     });
 }
