@@ -131,6 +131,7 @@ button {
 }
 
 .active, .view-button:hover, .menu-icon:hover { color: var(--white); }
+.card-body:active { background-color: var(--navy200);}
 
 /*-- Card background colors --*/
 .profile { background-color: var(--navy900); flex-direction: column;}
