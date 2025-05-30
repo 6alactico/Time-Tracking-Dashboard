@@ -2,6 +2,19 @@
     --white: hsl(100, 100%, 100%);
     --navy900: hsl(235, 46%, 20%);
     --navy200: hsl(236, 100%, 87%);
+
+    --radius-md: 0.875rem;
+
+    --font-xs: 0.875rem;
+    --font-sm: 1rem;
+    --font-md: 1.125rem;
+    --font-lg: 1.5rem;
+    --font-xl: 2rem;
+
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
 }
 
 * {
@@ -13,57 +26,44 @@
 body {
     background-color: hsl(226, 43%, 10%);
     color: var(--white);
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.125rem;
-    min-height: 100vh;
+    display: flex;
+    font-size: var(--font-md);
     margin: 4rem auto;
+    min-height: 100vh;
 }
 
+body { font-family: 'Rubik', sans-serif;}
+
+/*-- Dashboard layout --*/
 #dashboard, .card, .card-body, .card-title-row, 
-.card-hours, #profile-header, #view-toggle {
+.card-hours, #profile-header, #button-group {
     display: flex;
 }
 
-/*-- Dashboard and card layout --*/
 #dashboard {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--spacing-md);
     margin: auto;
-    padding: 1.5rem;
+    padding: var(--spacing-md);
     width: 23.438rem;
 }
 
+/*-- Cards --*/
 .card {
-    border-radius: 0.875rem;
+    border-radius: var(--radius-md);
     flex-direction: column-reverse;
     min-height: 10rem;
     overflow: hidden;
     position: relative;
 }
 
-/*-- Card elements --*/
-.profile { background-color: var(--navy900); flex-direction: column;}
-.work { background-color: hsl(15, 100%, 70%); }
-.play { background-color: hsl(195, 74%, 62%); }
-.study { background-color: hsl(348, 100%, 68%); }
-.exercise { background-color: hsl(145, 58%, 55%); }
-.social { background-color: hsl(264, 64%, 52%); }
-.self-care { background-color: hsl(43, 84%, 65%); }
-
-.card-icon {
-    position: absolute;
-    right: 1.5rem;
-    top: -0.4rem;
-    z-index: 0;
-}
-
 .card-body {
     background-color: var(--navy900);
-    border-top-left-radius: 0.875rem;
-    border-top-right-radius: 0.875rem;
+    border-top-left-radius: var(--radius-md);
+    border-top-right-radius: var(--radius-md);
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1.75rem 1.5rem;
+    padding: 1.75rem var(--spacing-md);
     z-index: 1;
 }
 
@@ -73,80 +73,92 @@ body {
     justify-content: space-between;
 }
 
-h2 { font-size: 1.2rem; font-weight: 400; }
-.menu-icon { fill: var(--navy200); }
-
 .card-hours {
     align-items: center;
-    font-size: 1.875rem;
+    font-size: var(--spacing-lg);
     font-weight: 300;
     justify-content: space-between;
     width: 100%;
 }
 
-.previous-hours { color: var(--navy200); font-size: 0.875rem; }
+.previous-hours { color: var(--navy200); font-size: var(--font-xs); }
 
-/*-- Profile card elements --*/
+.card-icon {
+    position: absolute;
+    right: var(--spacing-md);
+    top: -0.4rem;
+    z-index: 0;
+}
+
+h2 { font-size: var(--font-md); font-weight: 500; }
+.menu-icon { fill: var(--navy200); }
+
+/*-- Profile Card --*/
 #profile-header {
-    align-items: center;
     background-color: hsl(246, 80%, 60%);
-    border-radius: 1rem;
-    gap: 1rem;
-    padding: 2rem;
+    border-radius: var(--radius-md);
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
 }
 
 .profile img {
-    border: 0.2rem solid var(--white);
+    border: 0.25rem solid var(--white);
     border-radius: 50%; 
     width: 4.5rem;
 }
 
 h1 {
-    font-size: 0.875rem;
+    align-self: center;
+    color: hsl(0, 0%, 85%);
+    font-size: var(--font-xs);
     font-weight: 300;
-    line-height: 1.6rem;
-    color: hsl(0, 0%, 80%);
+    line-height: 200%;
 }
 
-h1 span { font-size: 1.5rem; color: var(--white);}
+h1 span { font-size: var(--font-lg); color: var(--white); }
 
-/*-- Button elements --*/
-#view-toggle { gap: 2.5rem; margin: auto; }
+/*-- Button Group --*/
+#button-group { gap: 2.5rem; margin: auto; }
 
 button {
     background-color: transparent;
     border: none;
     color: hsl(236, 80%, 75%);
-    font-family: 'Rubik', sans-serif;
-    font-size: 1.063rem;
+    font: inherit;
     font-weight: 300;
     height: 4rem;
     width: 4rem;
 }
 
-.toggle-button:active, .active { color: var(--white); }
+.active, .view-button:hover, .menu-icon:hover { color: var(--white); }
 
-/*-- Desktop Screen Size --*/
+/*-- Card background colors --*/
+.profile { background-color: var(--navy900); flex-direction: column;}
+.work { background-color: hsl(15, 100%, 70%); }
+.play { background-color: hsl(195, 74%, 62%); }
+.study { background-color: hsl(348, 100%, 68%); }
+.exercise { background-color: hsl(145, 58%, 55%); }
+.social { background-color: hsl(264, 64%, 52%); }
+.self-care { background-color: hsl(43, 84%, 65%); }
+
+/*-- Desktop View --*/
 @media screen and (min-width: 48rem) {
     body { margin: 0rem auto; }
-    body, .card-hours { display: flex; }
     
     #dashboard {
         display: grid;
         gap: 1.75rem;
         grid-template-columns: repeat(4, auto);
-        grid-template-rows: auto auto;
         grid-template-areas: 
-        "profile work play study"
-        "profile exercise social self-care";
+            "profile work play study"
+            "profile exercise social self-care";
         justify-content: center;
         width: auto;
     }
 
-    /*-- Card elements --*/
+    .profile { grid-area: profile; }
     .work { grid-area: work; }
     .play { grid-area: play; }
-    .profile { grid-area: profile; }
     .study { grid-area: study; }
     .exercise { grid-area: exercise; }
     .social { grid-area: social; }
@@ -155,9 +167,7 @@ button {
     .card { width: 15rem; min-height: 14rem; }
     .card-body { justify-content: space-between; height: 83%; }
     .card-body:hover { background-color:  hsl(235, 45%, 61%); }
-
-    .card-body:hover, .menu-icon:hover, .toggle-button:hover { cursor: pointer; }
-    .menu-icon:hover { cursor: pointer; fill: var(--white); }
+    .card-body:hover, .menu-icon:hover, .view-button:hover { cursor: pointer; }
 
     .card-hours {
         align-items: flex-start;
@@ -165,30 +175,26 @@ button {
         gap: 0.5rem;
     }
 
-    .current-hours { font-size: 3rem; font-weight: 300; }
+    .current-hours { font-size: var(--spacing-xl); font-weight: 300; }
 
-    /*-- Profile card elements --*/
     #profile-header {
         flex-direction: column;
         gap: 2.5rem;
-        padding: 2rem 1.75rem;
+        padding: var(--spacing-lg) var(--spacing-md);
         height: 100%;
     }
 
-    h1 span { font-size: 2.2rem; line-height: 2.8rem; }
+    h1 span { font-size: var(--font-xl); line-height: 120%; }
 
-    /*-- Button elements --*/
-    #view-toggle { 
+    #button-group { 
         flex-direction: column; 
-        gap: 1.3rem;
-        margin: 1.4rem 1.75rem 1.5rem;
+        gap: var(--spacing-sm);
+        margin: var(--spacing-lg) var(--spacing-md);
     }
     
     button { 
-        font-size: 0.938rem; 
+        font-size: var(--font-sm); 
         height: auto;
         text-align: left; 
     }
-
-    .toggle-button:hover { color: var(--white); }
 }

@@ -15,18 +15,18 @@
         <img src="./images/image-jeremy.png" alt="Image of Jeremy">
         <h1>Report for<span style="display: block;">Jeremy Robson</span></h1>
       </header>
-      <nav id="view-toggle">
-        <button data-view="daily" class="toggle-button" type="button">Daily</button>
-        <button data-view="weekly" class="toggle-button active" type="button">Weekly</button>
-        <button data-view="monthly" class="toggle-button" type="button">Monthly</button>
-      </nav>
+      <div id="button-group" role="group">
+        <button data-view="daily" type="button" class="view-button active">Daily</button>
+        <button data-view="weekly" type="button" class="view-button">Weekly</button>
+        <button data-view="monthly" type="button" class="view-button">Monthly</button>
+      </div>
     </article>
       <!-- WORK CARD -->
       <article class="card work">
-        <img class="card-icon" src="./images/icon-work.svg" alt="Briefcase icon" style="width: 5rem; height: 5rem;">
+        <img class="card-icon" src="./images/icon-work.svg" alt="Briefcase" style="width: 5rem; height: 5rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2> <!-- Display card title via JS -->
+              <h2 class="card-title">Work</h2> <!-- Display card title via JS -->
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">
@@ -37,10 +37,10 @@
       </article>
         <!-- PLAY CARD -->
       <article class="card play">
-        <img class="card-icon" src="./images/icon-play.svg" alt="Gaming controller icon" style="width: 5rem; height: 5rem;">
+        <img class="card-icon" src="./images/icon-play.svg" alt="Gaming controller" style="width: 5rem; height: 5rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2>
+              <h2 class="card-title">Play</h2>
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">
@@ -51,10 +51,10 @@
       </article>
       <!-- STUDY CARD -->
       <article class="card study">
-        <img class="card-icon" src="./images/icon-study.svg" alt="Book icon" style="width: 5rem; height: 5rem;">
+        <img class="card-icon" src="./images/icon-study.svg" alt="Book" style="width: 5rem; height: 5rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2>
+              <h2 class="card-title">Study</h2>
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">
@@ -65,10 +65,10 @@
       </article>
       <!-- EXERCISE CARD -->
       <article class="card exercise">
-        <img class="card-icon" src="./images/icon-exercise.svg" alt="Person icon" style="width: 5rem; height: 4rem;">
+        <img class="card-icon" src="./images/icon-exercise.svg" alt="Person running" style="width: 5rem; height: 4rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2>
+              <h2 class="card-title">Exercise</h2>
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">
@@ -79,10 +79,10 @@
       </article>
       <!-- SOCIAL CARD -->
       <article class="card social">
-        <img class="card-icon" src="./images/icon-social.svg" alt="Text bubbles icon" style="width: 5rem; height: 6rem;">
+        <img class="card-icon" src="./images/icon-social.svg" alt="Text bubbles" style="width: 5rem; height: 6rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2>
+              <h2 class="card-title">Social</h2>
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">
@@ -93,10 +93,10 @@
       </article>
       <!-- SELF CARD -->
       <article class="card self-care">
-        <img class="card-icon" src="./images/icon-self-care.svg" alt="Heart aid icon" style="width: 4.5rem; height: 4.5rem;">
+        <img class="card-icon" src="./images/icon-self-care.svg" alt="Heart aid" style="width: 4.5rem; height: 4.5rem;">
           <div class="card-body">
             <header class="card-title-row">
-              <h2 class="card-title"></h2>
+              <h2 class="card-title">Self Care</h2>
               <svg class="menu-icon" width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill-rule="evenodd"/></svg>
             </header>
             <div class="card-hours">

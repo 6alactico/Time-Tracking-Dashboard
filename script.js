@@ -1,63 +1,36 @@
-const buttons = document.querySelectorAll('#view-toggle button');
-let timeData = [];
-// Fetch data from json file
+const buttons = document.querySelectorAll('#button-group button');
+let json;
+
 fetch('data.json')
-    .then(res => res.json()) // Converts data.json to object
-        .then(data => {
-            timeData = data; // Saves JSON into timeData for use
+    .then(res => res.json())
+    .then(data => {
+        json = data;
+        const activeBtn = document.querySelector('#button-group .active') || buttons[1];
+        updateUI(activeBtn.dataset.view); 
+    });
 
-            const activeBtn = document.querySelector('#view-toggle .active') || buttons[1]; // If no button is active, it defaults to the second one
-            updateUI(activeBtn.dataset.view); 
-})
-.catch(err => console.error('Failed to load data:', err));
-
-// Toggle between views using buttons
 buttons.forEach(btn => {
     btn.addEventListener('click', () => {
         buttons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const view = btn.dataset.view;
-        updateUI(view);
-    });
+        updateUI(btn.dataset.view);
+    })
 });
 
-// Match JSON titles to card IDs
-function titleToCard(title) {
-    return title.toLowerCase().replace(/\s+/g, '-');
-}
+const slugifyTitle = (title) => title.toLowerCase().replace(/\s+/g, '-'); // Match JSON titles to cards
 
-// Get label based on timeframe
-function previousLabel(view) {
-    switch (view) {
-        case 'daily':
-            return 'Yesterday';
-        case 'weekly':
-            return 'Last Week';
-        case 'monthly':
-            return 'Last Month';
-        default:
-            return 'Previous';
-    }  
-}
+const previousLabel = (view) => 
+    ({daily: 'Yesterday', weekly: 'Last Week', monthly: 'Last Month' } [view] || 'Previous');
 
-// Update cards on selected view
 function updateUI(view) {
-    timeData.forEach(item => {
-        const cardClass = titleToCard(item.title);
-        console.log('Looking for card with class:', cardClass);
-        const card = document.querySelector(`.card.${cardClass}`);
+    json.forEach(({title, timeframes}) => {
+        const card = document.querySelector(`.card.${slugifyTitle(title)}`);
         if (!card) return;
 
-        const currentTime = card.querySelector('.current-hours');
-        const previousTime = card.querySelector('.previous-hours');
-        const cardTitle = card.querySelector('.card-title');
-        cardTitle.textContent = item.title;
-
-        // Get values for chosen view
-        const { current, previous } = item.timeframes[view];
-        const label = previousLabel(view);
-        currentTime.textContent = `${current}hrs`; 
-        previousTime.textContent = `${label} - ${previous}hrs`;
+        const {current, previous} = timeframes[view];
+        
+        card.querySelector('.card-title').textContent = title;
+        card.querySelector('.current-hours').textContent = `${current}hrs`;
+        card.querySelector('.previous-hours').textContent = `${previousLabel(view)} - ${previous}hrs`;
     });
 }
